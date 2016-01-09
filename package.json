@@ -48,6 +48,7 @@
     "es6-promise": "^3.0.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "flux": "^2.1.1",
+    "glob": "^6.0.4",
     "install": "^0.4.1",
     "node-sass": "^3.4.2",
     "npm": "^3.5.3",

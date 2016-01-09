@@ -3,13 +3,12 @@ var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 //var atImport = require('postcss-import');
 require('es6-promise').polyfill();
+var glob = require('glob');
 
 module.exports.webpack = {
   options: {
     devtool: 'eval',
-    entry: [
-      './assets/js/components/sample/scripts/components/sample.Component.js'
-    ],
+    entry: glob.sync('./assets/js/components/**/scripts/components/*.js'),
     output: {
       path: path.resolve(__dirname, '../.tmp/public/js'),
       filename: 'bundle.js'
