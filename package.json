@@ -50,6 +50,8 @@
     "flux": "^2.1.1",
     "glob": "^6.0.4",
     "install": "^0.4.1",
+    "lodash": "^3.10.1",
+    "merge-defaults": "^0.2.1",
     "node-sass": "^3.4.2",
     "npm": "^3.5.3",
     "postcss-loader": "^0.8.0",
