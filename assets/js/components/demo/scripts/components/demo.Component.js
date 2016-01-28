@@ -8,13 +8,16 @@ var demoAction = require("../actions/demo.Action");
 var demoStore = require("../stores/demo.Stores");
 var demoStyle = require("../../styles/demo.scss");
 
-module.exports.Demo = React.createClass({
+var Demo = React.createClass({
   getInitialState : function(){
     return {
 
     }
   },
   render: function(){
-    return <div>demo..!!</div>
+    return <div>WTF !!</div>
   }
 });
+
+React.render(<Demo />, document.getElementById('demo'));
+

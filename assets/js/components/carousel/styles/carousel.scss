@@ -1,0 +1,122 @@
+//colors
+$red:  red;
+$color_bon_jour_approx: #e0e0e0;
+$color_apple_approx: #4caf50;
+
+//@extend-elements
+//original selectors
+//.prev, .next
+%extend_1 {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  padding: 0;
+  cursor: pointer;
+  color: $color_apple_approx;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+body{
+  background: #f5f6f7;
+}
+#carousel{
+  background: #fff;
+  margin: 20px;
+  border-color: #fff;
+  -webkit-box-shadow: 0 10px 100px 0 rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 10px 100px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 10px 100px 0 rgba(0,0,0,0.3);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+}
+
+.carousel-component {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.carousel-wrapper {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height:100%;
+  width:100%;
+}
+.carousel-item-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: 0.5s;
+  height:100%;
+  display:flex;
+}
+.item {
+
+  height: 100%;
+  text-align: center;
+  float: left;
+  position: relative;
+  display: inline-block;
+  flex:1;
+}
+.indicators {
+  text-align: center;
+  .indicator-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0 12px;
+    background-color: $color_bon_jour_approx;
+    //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+    transition: background-color .3s;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 50%;
+    &.active {
+      background-color: $color_apple_approx;
+    }
+  }
+}
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  //Instead of the line below you could use @include user-select($select)
+  user-select: none;
+  vertical-align: middle;
+  z-index: 1;
+  will-change: opacity, transform;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all .3s ease-out;
+}
+.prev {
+  @extend %extend_1;
+  left: -35px;
+}
+.next {
+  @extend %extend_1;
+  right: -43px;
+}
+.right-content.side-nav {
+  top: 74px;
+  left: auto;
+  right: 0;
+}
+.left-content.side-nav {
+  top: 74px;
+}
