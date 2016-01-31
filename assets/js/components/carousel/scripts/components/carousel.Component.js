@@ -23,7 +23,8 @@ var Carousel = React.createClass({
       autoPlay : true,
       autoPlayInterval : 1000,
       infiniteScroll : true,
-      showArrows : false
+      showArrows : false,
+      direction : 'left'
     }
   },
   propTypes : {
@@ -31,7 +32,8 @@ var Carousel = React.createClass({
     autoPlay : React.PropTypes.bool,
     autoPlayInterval: React.PropTypes.number,
     infiniteScroll:React.PropTypes.bool,
-    showArrows:React.PropTypes.bool
+    showArrows:React.PropTypes.bool,
+    direction : React.PropTypes.string
   },
   _slideNext : function(){
     var numSlides = this.props.items.length;
@@ -133,14 +135,17 @@ var Carousel = React.createClass({
     var children = this.props.items,
         width = this.state.width,
         trackWidth = width * children.length,
-        trackPosition = -(width * this.state.activeIndex);
+        trackPositionLeft = -(width * this.state.activeIndex),
+        trackPositionRight = (this.state.activeIndex === 0) ? trackWidth - width : trackWidth - (width * (this.state.activeIndex + 1)),
+        styleObj = (this.props.direction === 'left') ? { width: trackWidth, marginLeft: trackPositionLeft} : { width: trackWidth, right: trackPositionRight, 'flexDirection' :'row-reverse'};
+
 
 
     return <div>
     <div ref="carouselComponent" className="carousel-component">
 
         <div className="carousel-wrapper">
-          <div className="carousel-item-container" style={{ width: trackWidth, marginLeft: trackPosition }}>
+          <div className="carousel-item-container" style={styleObj}>
             {this.props.items.map(this.createSlides)}
           </div>
         </div>
