@@ -19,5 +19,9 @@ var Demo = React.createClass({
   }
 });
 
-React.render(<Demo />, document.getElementById('demo'));
+if(document.getElementById('demo')) {
+	React.render(<Demo />, document.getElementById('demo'));
+}else{
+	console.log('demo id is not found');
+}
 

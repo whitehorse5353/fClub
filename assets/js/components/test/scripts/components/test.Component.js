@@ -19,4 +19,8 @@ var Test = React.createClass({
   }
 });
 
-React.render(<Test />, document.getElementById('test'));
+if ( document.getElementById('test') ) {
+	React.render(<Test />, document.getElementById('test'));
+}else{
+	console.log('test id is not found');
+}

@@ -19,4 +19,8 @@ var <%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.
   }
 });
 
-React.render(<<%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.length) %> />, document.getElementById('<%= filename.substring(0, filename.length) %>'));
+if ( document.getElementById('<%= filename.substring(0, filename.length) %>') ) {
+	React.render(<<%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.length) %> />, document.getElementById('<%= filename.substring(0, filename.length) %>'));
+}else{
+	console.log ( '<%= filename.substring(0, filename.length) %> id is not found' );
+}

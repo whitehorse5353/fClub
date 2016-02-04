@@ -18,4 +18,8 @@ var Sample = React.createClass({
   }
 });
 
-React.render(<Sample />, document.getElementById('sample'));
+if ( document.getElementById('sample') ) { 
+	React.render(<Sample />, document.getElementById('sample'));
+}else{
+	console.log('sample id is not found')
+}	

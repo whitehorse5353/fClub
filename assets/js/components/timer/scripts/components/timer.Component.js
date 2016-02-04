@@ -16,7 +16,7 @@ var Timer = React.createClass({
   },
   getDefaultProps : function(){
     return {
-      endTIme : 'January 28 2016 21:59:59'
+      endTime : 'February 28 2016 21:59:59'
     }
   },
   render: function(){
@@ -28,4 +28,8 @@ var Timer = React.createClass({
   }
 });
 
-React.render(<Timer />, document.getElementById('timer'));
+if ( document.getElementById('timer') ) {
+  React.render(<Timer />, document.getElementById('timer'));
+}else{
+  console.log('timer id is not found')
+}
