@@ -31,14 +31,24 @@ setTimeout(function sunrise () {
   }
 </style>
 
+<style>
+.tempCompHeader{
+  color: #ee6e73;
+}
+hr{
+  border-color: #ee6e73;
+  border-style: dotted;
+}
+</style>
+
 <header id="banner" class="body">
   <nav>
     <ul>
-      <li class="active"><a href="/">home</a></li>
+      <li><a href="/">home</a></li>
       <li><a href="#">portfolio</a></li>
       <li><a href="#">blog</a></li>
       <li><a href="#">contact</a></li>
-      <li><a href="/components">UI-components</a></li>
+      <li class="active"><a href="#">UI-components</a></li>
     </ul>
   </nav>
 </header>
@@ -49,14 +59,19 @@ setTimeout(function sunrise () {
   </div>
   <div class="main-content">
 
-    <!--New Carousel Component Starts-->
-      <div id="carousel"></div>
+      <hr/>
+      <h4 class="tempCompHeader">Timer Component</h4>
+      <div id="timer"></div>
+
+      <hr/>
+      <h4 class="tempCompHeader">Admin Form</h4>
+      <div id="formAdmin"></div>
+
+      <hr/>
+      <h4 class="tempCompHeader">User Form</h4>
+      <div id="formUser"></div>
+
     <!--New Carousel Component Ends-->
-
-    <hr/>
-    <div id="timer"></div>
-
-
   </div>
   <div class="right-content side-nav fixed">
 

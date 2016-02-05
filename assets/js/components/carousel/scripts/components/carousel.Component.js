@@ -159,4 +159,8 @@ var Carousel = React.createClass({
   }
 });
 
-React.render(<Carousel />, document.getElementById('carousel'));
+if ( document.getElementById('carousel') ) {
+  React.render(<Carousel />, document.getElementById('carousel'));
+}else{
+  console.log('carousel id is not found')
+}
