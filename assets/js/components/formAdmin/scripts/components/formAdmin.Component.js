@@ -15,45 +15,57 @@ var FormAdmin = React.createClass({
     }
   },
   render: function(){
-    return <div>
-			<div className="row">
-			    <form className="col s12">
-			      <div className="row">
-			        <div className="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" className="validate" />
-			          <label htmlFor="first_name">First Name</label>
-			        </div>
-			        <div className="input-field col s6">
-			          <input id="last_name" type="text" className="validate" />
-			          <label htmlFor="last_name">Last Name</label>
-			        </div>
-			      </div>
-			      <div className="row">
-			        <div className="input-field col s12">
-			          <input disabled value="I am not editable" id="disabled" type="text" className="validate" />
-			          <label htmlFor="disabled">Disabled</label>
-			        </div>
-			      </div>
-			      <div className="row">
-			        <div className="input-field col s12">
-			          <input id="password" type="password" className="validate" />
-			          <label htmlFor="password">Password</label>
-			        </div>
-			      </div>
-			      <div className="row">
-			        <div className="input-field col s12">
-			          <input id="email" type="email" className="validate" />
-			          <label htmlFor="email">Email</label>
-			        </div>
-			      </div>
-			    </form>
-			  </div>
-    </div>
+    return (
+    	<div className="adminForm">
+			<form>
+				<div className="row">
+					<div classNme="input-field col s12">
+						<i className="material-icons prefix">mode_edit</i>
+						<label htmlFor="form-admin-challenge-question">Challenge Question</label>
+						<textarea id="form-admin-challenge-question" className="materialize-textarea" length="120"></textarea>
+					</div>
+				</div>
+				<div className="row">
+					<div className="input-field col s3">
+						<label htmlFor="form-admin-start-date">Start Date</label>
+						<input id="form-admin-start-date" type="date" className="datepicker" />
+					</div>
+					<div className="input-field col s3">
+						<label htmlFor="form-admin-start-time">Start Time</label>
+						<input id="form-admin-start-time" type="date" className="timepicker" />
+					</div>
+					<div className="input-field col s3">
+						<label htmlFor="form-admin-end-time">End Time</label>
+						<input id="form-admin-end-time" type="date" className="timepicker" />
+					</div>
+				</div>
+				<div className="row">
+					<div className="col s12">
+						<button className="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+					</div>
+				</div>
+
+			</form>
+    	</div>
+    );
   }
 });
 
 if (document.getElementById('formAdmin')) {
 	React.render(<FormAdmin />, document.getElementById('formAdmin'));
+	try{
+		$('.datepicker').pickadate({
+			selectMonths: true, // Creates a dropdown to control month
+			selectYears: 1 // Creates a dropdown of 15 years to control year
+		});
+
+		$('.timepicker').pickatime({
+
+		});
+	}catch(e){
+		console.log(e.message);
+	}
+	  
 }else{
 	console.log('formAdmin id is not found');
 }
