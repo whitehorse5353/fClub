@@ -1,6 +1,7 @@
 {
   "generators": {
     "modules": {
+      "flux-component" : "./react-component-facebook-flux-generator",
       "component" : "./react-component-generator"
     }
   },

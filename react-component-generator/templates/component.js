@@ -4,9 +4,6 @@
  */
 
 var React = require("react");
-var <%= filename %>Action = require("../actions/<%= filename %>.Action");
-var <%= filename %>Store = require("../stores/<%= filename %>.Stores");
-var <%= filename %>Style = require("../../styles/<%= filename %>.scss");
 
 var <%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.length) %> = React.createClass({
   getInitialState : function(){
@@ -19,8 +16,4 @@ var <%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.
   }
 });
 
-if ( document.getElementById('<%= filename.substring(0, filename.length) %>') ) {
-	React.render(<<%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.length) %> />, document.getElementById('<%= filename.substring(0, filename.length) %>'));
-}else{
-	console.log ( '<%= filename.substring(0, filename.length) %> id is not found' );
-}
+module.exports = <%= filename.substring(0, 1).toUpperCase() + filename.substring(1, filename.length) %>;

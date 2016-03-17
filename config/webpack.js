@@ -8,9 +8,9 @@ var glob = require('glob');
 module.exports.webpack = {
   options: {
     devtool: 'eval',
-    entry: glob.sync('./assets/js/components/**/scripts/components/*.js'),
+    entry: glob.sync('./assets/js/components/**/main.js'),
     output: {
-      path: path.resolve(__dirname, '../.tmp/public/js'),
+      path: path.resolve(__dirname, '../dist/public/js'),
       filename: 'bundle.js'
     },
     module: {
@@ -32,7 +32,7 @@ module.exports.webpack = {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
-      new ExtractTextPlugin('../styles/style.css')
+      new ExtractTextPlugin('../css/style.css')
     ]
   },
   watchOptions: {

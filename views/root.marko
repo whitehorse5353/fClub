@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fight Club</title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!--STYLES-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <!--STYLES END-->
+</head>
+
+<body>
+<ssi data-component-url="components/dummy"
+     data-component-name="dummy"
+     data-content-model="/auth"
+     data-render-path="dummy"
+     data-host="${data.host}"
+     isServer="false">
+</ssi>
+<header id="banner" class="body">
+  <nav>
+    <ul>
+      <li class="active"><a href="/">home</a></li>
+      <li><a href="#">portfolio</a></li>
+      <li><a href="#">blog</a></li>
+      <li><a href="#">contact</a></li>
+      <li><a href="/components">UI-components</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="main-wrapper">
+
+  <div class="left-column side-nav fixed">
+
+  </div>
+  <div class="main-content">
+
+    <!--New Carousel Component Starts-->
+      <div id="carousel"></div>
+    <!--New Carousel Component Ends-->
+
+    <hr/>
+    <div id="timer"></div>
+
+
+  </div>
+  <div class="right-content side-nav fixed">
+
+  </div>
+</div>
+<!--SCRIPTS-->
+<script src="/static/js/bundle.js"></script>
+<!--SCRIPTS END-->
+</body>
+</html>

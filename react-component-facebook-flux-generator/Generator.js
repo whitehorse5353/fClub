@@ -92,8 +92,13 @@ module.exports = {
     // entire scope available to it (uses underscore/JST/ejs syntax).
     // Then the file is copied into the specified destination (on the left).
 
-    './assets/js/components/:filename/scripts/index.js': { template: 'component.js' },
-    './assets/js/components/:filename/main.js': { template: 'main.js' },
+    './assets/js/components/:filename/scripts/actions/:filename.Action.js': { template: 'actions.js' },
+    './assets/js/components/:filename/scripts/dispatcher/:filename.Dispatcher.js': { template: 'dispatcher.js' },
+    './assets/js/components/:filename/scripts/stores/:filename.Stores.js': { template: 'store.js' },
+    './assets/js/components/:filename/scripts/components/:filename.Component.js': { template: 'component.js' },
+    './assets/js/components/:filename/renderer.js': { template: 'marko-renderer.js' },
+    './assets/js/components/:filename/template.marko': { template: 'marko-template.js' },
+    './assets/js/components/:filename/index.html': { template: 'index.js' },
     './assets/js/components/:filename/styles/:filename.scss': { template: 'sampleSCSS.js' }
 
     // Creates a folder at a static path

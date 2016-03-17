@@ -21,7 +21,7 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-  // middleware: {
+   middleware: {
 
   /***************************************************************************
   *                                                                          *
@@ -71,7 +71,7 @@ module.exports.http = {
 
     // bodyParser: require('skipper')
 
-  // },
+   },
 
   /***************************************************************************
   *                                                                          *
@@ -84,4 +84,11 @@ module.exports.http = {
   ***************************************************************************/
 
   // cache: 31557600000
+};
+
+var express = require('express');
+module.exports.express = {
+  customMiddleware: function (app) {
+    app.use('/static', express.static(process.cwd() + '/dist/public/'));
+  }
 };
